@@ -41,7 +41,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: python manage.py makemigrations --noinput
+      - run: python manage.py makemigrations --check --dry-run
       - run: python manage.py migrate --noinput
       - run: python manage.py check --deploy
       - run: ruff check .
